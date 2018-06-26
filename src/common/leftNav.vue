@@ -25,7 +25,7 @@
 
 <script>
 import headTop from '../components/headTop'
-import {menuall} from '@/api/index'
+// import {menuall} from '@/api/index'
     export default {
 		data() {
 			return {
@@ -46,24 +46,6 @@ import {menuall} from '@/api/index'
 		},
 		components: {
 			headTop
-		},
-		methods: {
-			getmenuall(){
-				const that = this;
-				menuall().then(res => {
-					res.datas.forEach(element => {
-						if (element.resources) {
-							that.shuzu.push(element)
-						} 
-						if (!element.resources && element.children && element.children.length != 0 ) {
-							that.shuzu1.push(element)
-						}
-					});
-				})
-			}
-		},
-		mounted() {
-			this.getmenuall();
 		}
     }
 </script>

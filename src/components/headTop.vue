@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {loginOut,getUser} from '../api/index'	
+// import {loginOut,getUser} from '../api/index'	
     export default {
     	data(){
     		return {
@@ -27,27 +27,7 @@ import {loginOut,getUser} from '../api/index'
     	},
     	computed: {
     		
-    	},
-		methods: {
-			 handleCommand(command) {
-				if (command == 'home') {
-					this.$router.push('/manage');
-				}else if(command == 'singout'){
-					loginOut().then(res => {
-						if (res.code == 200) {
-							 this.$message({
-		                        type: 'success',
-		                        message: '退出账号成功！'
-		                    });
-							this.$router.push({path: '/'});
-						}  
-					})
-				} else if (command == 'edirpassword') {
-					this.$router.push('/editPassward');
-				}
-			},
-			
-		}
+    	}
     }
 </script>
 
