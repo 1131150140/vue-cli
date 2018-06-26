@@ -9,11 +9,13 @@ Vue.use(ElementUI)
 import VueBus from './vue-bus/vue-bus'
 Vue.use(VueBus)
 Vue.config.productionTip = false
+import store from './store'
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
